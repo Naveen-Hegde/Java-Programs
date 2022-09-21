@@ -1,0 +1,36 @@
+
+import java.io.*;
+import java.util.Scanner;
+
+class stringmatching{
+	//Brute Force String Matching
+	public static void stringmatch(String pattern, String text) 
+	{
+        int m = pattern.length();
+        int n = text.length();
+
+        for (int i = 0; i <= n - m; i++)
+        {
+        	int j;
+            for (j = 0; j < m; j++) 
+            {
+                if (text.charAt(i+j) != pattern.charAt(j))
+                break;
+            }
+            if (j == m)
+            {
+            	System.out.println(i);
+            	break;
+            }                       
+        }                            
+    }
+
+	public static void main(String[] args)
+	{
+		Scanner sc =  new Scanner(System.in);
+		String text = sc.nextLine();
+		String pattern = "sdmcet";
+		stringmatch(pattern,text);
+		sc.close();
+	}
+}
